@@ -1,0 +1,83 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Part 1: Button hover effect */
+#hoverBtn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s ease, transform 0.3s;
+}
+
+#hoverBtn:hover {
+  background: #2ecc71;
+  transform: scale(1.1);
+}
+
+/* Box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: #e74c3c;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.box.animate {
+  opacity: 1;
+  animation: moveRight 2s ease-in-out forwards;
+}
+
+@keyframes moveRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(200px); }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  animation: scaleUp 0.5s ease forwards;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 20px;
+  float: right;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
